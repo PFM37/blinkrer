@@ -11,16 +11,16 @@ document.addEventListener("DOMContentLoaded", () => {
     function loadPage(url) {
         if (!url.startsWith("http")) {
             // Treat it as a search query
-            let searchUrl = "https://pfm-search.sytes.net/search?query=" + encodeURIComponent(url);
-            loadIframe(searchUrl);
+            let searchUrl = "https://google.com/search?query=" + encodeURIComponent(url);
+            loadWebview(searchUrl);
         } else {
             // Treat it as a direct URL and fetch the site content
             fetchWebsite(url);
         }
     }
 
-    function loadIframe(searchUrl) {
-        container.innerHTML = `<webview id="iframe" src="${searchUrl}" align="center"></webview>`;
+    function loadWebview(searchUrl) {
+        container.innerHTML = `<webview class="webview" src="${searchUrl}" align="center"></webview>`;
         updateHistory(searchUrl);
     }
 

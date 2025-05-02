@@ -1,12 +1,47 @@
 body {
     background-color: transparent;
     margin: 0;
-    color: white;
+    color: #fff;
+    background-color: #222;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.wab {
+    color: #fff;
+    background-color: #222;
+}
+
+section.wab {
+    flex-shrink: 0; /* Don't grow or shrink */
+}
+
+/* Make sure the html and body take up the entire height */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Ensure the container for the webview takes up the full available space */
+.container {
+height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+/* Full height and width for the webview */
+.webview {
+    flex-grow: 1; /* Ensures it takes up all available space */
+    height: 100%; /* Make sure webview is full height */
+    width: 100%;  /* Ensure webview is full width */
 }
 
 .svg {
     transform: scaleX(-1);
+}
+#tab, .tab {
+    border-radius: 100% 0 100% 0;
+    background-color: #fff;
 }
 
 nav {
@@ -38,28 +73,39 @@ nav button:hover {
     background-color: rgba(255, 255, 255, 0.142);
 }
 
-nav input {
-    flex-grow: 1; /* Makes input expand to fill space */
-    color: white;
-    background-color: #222;
-    border: none;
-    border-radius: 100px;
-    padding: 12px;
+/* Gradient Border */
+.gradient-border {
+    position: relative;
+    padding: 2px; /* space for border effect */
+    display: flex;
+    border-radius: 100px; /* Rounded border */
+    align-items: center; /* Centers content inside the box */
+    background: linear-gradient(to right, #7302FE, #C421EC);
+    width: 100%; /* Ensure it takes full width */
 }
 
-nav button img {
+.gradient-border .content {
+    width: 100%; /* Make content stretch to fill parent */
+    background-color: white;
+    border-radius: 100px; /* Ensure the inner content has rounded corners */
+    color: #333;
+    font-family: sans-serif;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centers content inside the box */
+    padding: 12px;
+    background-color: #222;
+    border: none;
+    color: white; /* Text color */
+}
+
+/* Navbar buttons images */
+nav button svg {
     width: 17px;
 }
 
 html, body {
     height: 100%;
     margin: 0;
-}
-
-iframe {
-    height: calc(100% - 52px); /* 100% minus navbar height */
-    width: 100%;
-    border: none; /* Removes default border */
-    display: block; /* Prevents extra space */
-    overflow: hidden;
 }
