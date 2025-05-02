@@ -1,1 +1,61 @@
 node_modules
+package-lock.json
+.veryimportant
+dist
+coverage
+*.log
+*.env
+*.tsbuildinfo
+*.tgz
+*.zip
+*.tgz
+
+
+# Local env files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.development
+.env.production.local
+.env.production
+
+# Mac system files
+.DS_Store
+# Windows system files
+Thumbs.db
+# Linux system files
+autoreconf
+*.so
+*.o
+*.a
+*.out
+*.exe
+*.dll
+*.so
+*.dSYM
+*.class
+*.jar
+*.war
+*.ear
+*.class
+*.pyc
+*.pyo
+*.pyd
+
+# IDE files
+.vscode
+.idea
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+*.iml
+*.swp
+*.swo
+*.sublime-settings
+*.sublime-keymap
+*.sublime-menu
+*.sublime-theme
+*.sublime-completions
+*.sublime-snippet
+*.sublime-project
