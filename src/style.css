@@ -1,0 +1,65 @@
+body {
+    background-color: transparent;
+    margin: 0;
+    color: white;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.svg {
+    transform: scaleX(-1);
+}
+
+nav {
+    width: 100%;
+    color: white;
+    height: 56px;
+    background-color: #333;
+    display: flex;
+    align-items: center; /* Ensures buttons align vertically */
+    gap: 5px; /* Adds spacing between buttons */
+    padding: 0 5px; /* Adds padding to nav */
+}
+
+nav button {
+    color: white;
+    width: 40px; /* Set a fixed width */
+    height: 40px; /* Set a fixed height */
+    border-radius: 50%; /* Makes it circular */
+    background-color: transparent;
+    border: none;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding: 0; /* Remove percentage-based padding */
+    flex-shrink: 0; /* Prevents buttons from shrinking */
+}
+
+nav button:hover {
+    background-color: rgba(255, 255, 255, 0.142);
+}
+
+nav input {
+    flex-grow: 1; /* Makes input expand to fill space */
+    color: white;
+    background-color: #222;
+    border: none;
+    border-radius: 100px;
+    padding: 12px;
+}
+
+nav button img {
+    width: 17px;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+iframe {
+    height: calc(100% - 52px); /* 100% minus navbar height */
+    width: 100%;
+    border: none; /* Removes default border */
+    display: block; /* Prevents extra space */
+    overflow: hidden;
+}
