@@ -1,2 +1,2 @@
 # Blinkrer
-The Base the browser, blnkr uses
+The Base the browser, blinkr uses
