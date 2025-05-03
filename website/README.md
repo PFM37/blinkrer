@@ -15,5 +15,3 @@
 - 🧰 **Developer-friendly** structure for site testing and deployment
 
 ## 📂 File Structure
-
-

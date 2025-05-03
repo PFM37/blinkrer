@@ -1,6 +1,7 @@
 node_modules
 package-lock.json
 .veryimportant
+uiexample.md
 dist
 coverage
 *.log
