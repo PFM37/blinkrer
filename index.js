@@ -16,7 +16,7 @@ function createWindow() {
   win.maximize();
 
   // Load the index.html (renderer process)
-  win.loadFile(path.join(__dirname, 'test', 'index.html'));
+  win.loadFile(path.join(__dirname, 'src', 'index.html'));
 
   // You could optionally add a listener here for other events, like resize.
   win.on('resize', () => {
