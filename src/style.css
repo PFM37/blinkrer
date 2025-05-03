@@ -22,18 +22,11 @@ html, body {
     padding: 0;
 }
 
-/* Ensure the container for the webview takes up the full available space */
-.container {
-height: 100%;
-    width: 100%;
-    display: flex;
-}
-
 /* Full height and width for the webview */
-.webview {
-    flex-grow: 1; /* Ensures it takes up all available space */
-    height: 100%; /* Make sure webview is full height */
-    width: 100%;  /* Ensure webview is full width */
+webview {
+    width: 100%;  /* Set to full width */
+    height: 90vh; /* 90% of the viewport height, adjust as needed */
+    border: none; /* Optional: remove border for a cleaner look */
 }
 
 nav {

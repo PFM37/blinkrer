@@ -3,21 +3,22 @@ const path = require('path');
 
 function createWindow() {
   const win = new BrowserWindow({
-    width: 800,  // Initial width (this won't be used in fullscreen mode)
-    height: 600, // Initial height (this won't be used in fullscreen mode)
+    width: 800,  // Initial width (won't matter in fullscreen)
+    height: 600, // Initial height (won't matter in fullscreen)
     webPreferences: {
       nodeIntegration: true,
-      contextIsolation: false,  // ✅ Required with nodeIntegration
-      webviewTag: true          // ✅ Enables <webview>
+      contextIsolation: false,  // Required when nodeIntegration is true
+      webviewTag: true          // Enables <webview> tag
     }
   });
 
   // Set the window to fullscreen
   win.maximize();
 
-  win.loadFile(path.join(__dirname, 'src', 'index.html'));
+  // Load the index.html (renderer process)
+  win.loadFile(path.join(__dirname, 'test', 'index.html'));
 
-  // Optionally, add a listener to toggle fullscreen on some condition or event
+  // You could optionally add a listener here for other events, like resize.
   win.on('resize', () => {
     // Handle window resizing if needed
   });
