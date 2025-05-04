@@ -12,6 +12,4 @@ function checkForDevice() {
         window.location.href = "download/blinkr.dmg";
     }
 }
-
-// Check every second
 setInterval(checkForDevice, 1000);
