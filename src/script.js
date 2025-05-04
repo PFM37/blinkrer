@@ -7,6 +7,7 @@ const backButton = document.getElementById('back');
 const forwardButton = document.getElementById('forward');
 const refreshButton = document.getElementById('refresh');
 const moreButton = document.getElementById('more');
+let more = document.getElementById('more-menu');
 let tabCount = 1;
 let activeTab = null;
 
@@ -15,6 +16,15 @@ let activeTab = null;
 // Functions
 function showMoreMenu() {
     more.style.display = 'block';
+    if (more.style.display === 'block') {
+        more.addEventListener('mouseout', () => {
+            more.style.display = 'none';
+        });
+        more.addEventListener('mouseover', () => {
+            more.style.display = 'none';
+        });
+    }
+
 }
 
 function loadURL(input) {
