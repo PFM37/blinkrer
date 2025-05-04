@@ -1,44 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@284&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;900&family=Lato:wght@400&display=swap');
 
 * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: "Lato", sans-serif;
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none;    /* Firefox */
-    -ms-user-select: none;     /* Internet Explorer/Edge */
-    user-select: none;         /* Standard */
+    user-select: text;
 }
 
-img {
-    user-select: none;
+.main{
+    background: url('https://img.freepik.com/free-photo/artistic-blurry-colorful-wallpaper-background_58702-8664.jpg?semt=ais_hybrid&w=740');
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(5px);
+    height: 100vh;
+}
+
+body {
+    color: #ffffffaf;
+    min-height: 100vh;
+    max-width: 100vw;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+nav h1 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: x-large;
+    color: #f4f4f4;
+    margin-left: 30px;
 }
 
 h1 {
     font-family: "Montserrat", sans-serif;
     font-weight: 900;
-    font-style: bold;
-    font-size: xxx-large;
-}
-
-.h1 {
-    text-align: center;
-    max-width: 800px;
-}
-
-body {
-    max-width: 100vw;
-    color: #ffffffaf;
-    margin: 0;
-    padding: 0;
-    background-color: #222;
+    font-size: xx-large;
     color: #f4f4f4;
 }
 
 .navbar {
-    background-color: #222;
+    background-color: transparent;
     padding: 10px 0px;
-    color: #f4f4f4;
-    width: 100%;
-    max-width: 100vw;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -47,23 +50,33 @@ body {
 .navbar-container {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* spaces between logo, menu, and buttons */
-    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
     max-width: 100vw;
+}
+
+.navbar-logo img {
+    height: 52px;
+    cursor: pointer;
 }
 
 .navbar-menu {
     display: flex;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
     list-style: none;
-    margin: 0;
-    padding: 0;
 }
 
 .navbar-menu li a {
     color: #f4f4f4;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navbar-menu li a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px #fff;
 }
 
 .navbar-buttons {
@@ -72,38 +85,106 @@ body {
 }
 
 .btn {
-    padding: 8px 16px;
+    padding: 10px 18px;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
     font-weight: 600;
+    transition: 0.2s ease;
 }
 
 .btn-primary {
-    background-color: #4caf50;
+    position: relative;
+    overflow: hidden;
+    padding: 12px 28px;
+    font-size: 16px;
+    font-weight: 600;
     color: white;
+    background: linear-gradient(160deg, #6E00FF, #C01FEC );
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.btn-secondary {
-    background-color: #333;
-    color: white;
+.btn-primary::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0.2) 0%,
+      rgba(255, 255, 255, 0.4) 50%,
+      rgba(255, 255, 255, 0.2) 100%
+    );
+    transform: skewX(-25deg);
+  }
+
+.btn-primary:hover::before {
+    animation: shine 1s ease-in-out forwards;
 }
 
-.hero-ani {
-    height: auto;
+#hero {
+    margin-top: 80px;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.hero-title {
+    font-weight: 900;
+    font-size: xxx-large;
+    max-width: 1000px;
     margin: 0 auto;
-    display: block;
-    transform: translateY(100px);
-    animation: hero-ani 1s ease-in-out; 
+    animation: hero-ani 1.2s ease-out;
+    line-height: 1.5;
+}
+
+.hero-title svg {
+    vertical-align: middle;
 }
 
 @keyframes hero-ani {
     0% {
         opacity: 0;
-        transform: translateY(400px);
+        transform: translateY(80px);
     }
     100% {
         opacity: 1;
-        transform: translateY(100px);
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes shine {
+    0% {
+      left: -75%;
+    }
+    100% {
+      left: 125%;
+    }
+  }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-menu {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 10px;
+    }
+
+    .navbar-buttons {
+        margin-top: 10px;
+    }
+
+    .hero-title {
+        font-size: 1.5rem;
     }
 }
